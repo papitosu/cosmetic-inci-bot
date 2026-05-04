@@ -1,0 +1,67 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: inci
+      POSTGRES_PASSWORD: inci
+      POSTGRES_DB: inci
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    # No `ports:` — multi-tenant host. Other compose stacks may also
+    # ship a Postgres on 5432 and would collide. The bot/api/migrate
+    # services reach this DB via the compose network as `postgres:5432`,
+    # which is all they need. To poke the DB from the host, use
+    # `docker compose exec postgres psql -U inci -d inci`.
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U inci -d inci"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "60", "1", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    # No `ports:` — same multi-tenant reasoning as `postgres` above.
+    # Reachable in-network as `redis:6379`.
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  migrate:
+    build: .
+    env_file: .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: ["alembic", "upgrade", "head"]
+    restart: "no"
+
+  bot:
+    build: .
+    env_file: .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    command: ["python", "-m", "src.bot.main"]
+    volumes:
+      - ./data:/app/data:ro
+    healthcheck:
+      test: ["CMD", "python", "-m", "src.bot.healthcheck"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:

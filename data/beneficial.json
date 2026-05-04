@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "sources": [
+      "AAD/EADV public clinical guidelines on cosmetic actives",
+      "CIR (Cosmetic Ingredient Review) — open final reports cir-safety.org",
+      "Established dermatological consensus"
+    ],
+    "categories": [
+      "humectant", "emollient", "barrier", "antioxidant",
+      "anti_inflammatory", "active_brightener", "active_anti_aging",
+      "active_exfoliant", "active_acne", "spf_filter"
+    ],
+    "key": "lowercased INCI name as in inci_dict.csv 'name' column"
+  },
+  "ingredients": {
+    "niacinamide": {"category": "active_brightener", "tags": ["barrier", "anti_inflammatory"], "note": "Vitamin B3 - 4-10%"},
+    "panthenol": {"category": "humectant", "tags": ["barrier", "anti_inflammatory"], "note": "Pro-vitamin B5"},
+    "hyaluronic acid": {"category": "humectant"},
+    "sodium hyaluronate": {"category": "humectant"},
+    "hydrolyzed hyaluronic acid": {"category": "humectant"},
+    "sodium hyaluronate crosspolymer": {"category": "humectant"},
+    "glycerin": {"category": "humectant"},
+    "propanediol": {"category": "humectant"},
+    "betaine": {"category": "humectant"},
+    "sorbitol": {"category": "humectant"},
+    "urea": {"category": "humectant", "note": "<10% humectant; >10% keratolytic"},
+
+    "ceramide np": {"category": "barrier"},
+    "ceramide ap": {"category": "barrier"},
+    "ceramide eos": {"category": "barrier"},
+    "ceramide eop": {"category": "barrier"},
+    "ceramide ns": {"category": "barrier"},
+    "phytosphingosine": {"category": "barrier"},
+    "cholesterol": {"category": "barrier"},
+
+    "squalane": {"category": "emollient", "tags": ["barrier"]},
+    "shea butter": {"category": "emollient", "tags": ["barrier"]},
+    "butyrospermum parkii butter": {"category": "emollient", "tags": ["barrier"]},
+    "jojoba oil": {"category": "emollient"},
+    "argan oil": {"category": "emollient", "tags": ["antioxidant"]},
+    "marula oil": {"category": "emollient"},
+
+    "tocopherol": {"category": "antioxidant", "note": "Vitamin E"},
+    "tocopheryl acetate": {"category": "antioxidant"},
+    "ascorbic acid": {"category": "active_brightener", "tags": ["antioxidant"], "note": "Vitamin C 10-20%"},
+    "tetrahexyldecyl ascorbate": {"category": "antioxidant", "tags": ["active_brightener"]},
+    "ascorbyl glucoside": {"category": "antioxidant"},
+    "magnesium ascorbyl phosphate": {"category": "antioxidant"},
+    "sodium ascorbyl phosphate": {"category": "antioxidant"},
+    "3-o-ethyl ascorbic acid": {"category": "antioxidant"},
+    "ferulic acid": {"category": "antioxidant"},
+    "resveratrol": {"category": "antioxidant"},
+    "ubiquinone": {"category": "antioxidant", "note": "CoQ10"},
+    "astaxanthin": {"category": "antioxidant"},
+
+    "retinol": {"category": "active_anti_aging", "note": "Vitamin A — start low (0.1%)"},
+    "retinal": {"category": "active_anti_aging"},
+    "retinaldehyde": {"category": "active_anti_aging"},
+    "retinyl palmitate": {"category": "active_anti_aging"},
+    "hydroxypinacolone retinoate": {"category": "active_anti_aging", "note": "Granactive Retinoid"},
+    "bakuchiol": {"category": "active_anti_aging"},
+
+    "salicylic acid": {"category": "active_exfoliant", "tags": ["active_acne"], "note": "BHA 0.5-2%"},
+    "glycolic acid": {"category": "active_exfoliant", "note": "AHA 5-10%"},
+    "lactic acid": {"category": "active_exfoliant"},
+    "mandelic acid": {"category": "active_exfoliant"},
+    "azelaic acid": {"category": "active_acne", "tags": ["active_brightener", "anti_inflammatory"], "note": "10-20%"},
+    "benzoyl peroxide": {"category": "active_acne"},
+    "lactobionic acid": {"category": "active_exfoliant", "note": "PHA"},
+    "gluconolactone": {"category": "active_exfoliant", "note": "PHA"},
+
+    "centella asiatica extract": {"category": "anti_inflammatory"},
+    "asiaticoside": {"category": "anti_inflammatory"},
+    "madecassoside": {"category": "anti_inflammatory"},
+    "allantoin": {"category": "anti_inflammatory", "tags": ["barrier"]},
+    "bisabolol": {"category": "anti_inflammatory"},
+    "alpha-bisabolol": {"category": "anti_inflammatory"},
+    "beta-glucan": {"category": "anti_inflammatory", "tags": ["humectant"]},
+    "colloidal oatmeal": {"category": "anti_inflammatory", "tags": ["barrier"]},
+    "avena sativa kernel extract": {"category": "anti_inflammatory"},
+
+    "arbutin": {"category": "active_brightener"},
+    "alpha-arbutin": {"category": "active_brightener"},
+    "kojic acid": {"category": "active_brightener"},
+    "tranexamic acid": {"category": "active_brightener"},
+
+    "zinc oxide": {"category": "spf_filter", "note": "Mineral UVA/UVB"},
+    "titanium dioxide": {"category": "spf_filter", "note": "Mineral UVB"},
+
+    "adenosine": {"category": "active_anti_aging"},
+    "peptides": {"category": "active_anti_aging"},
+    "palmitoyl tripeptide-1": {"category": "active_anti_aging"},
+    "palmitoyl tetrapeptide-7": {"category": "active_anti_aging"},
+    "acetyl hexapeptide-8": {"category": "active_anti_aging", "note": "Argireline"},
+    "copper tripeptide-1": {"category": "active_anti_aging", "note": "GHK-Cu"}
+  }
+}

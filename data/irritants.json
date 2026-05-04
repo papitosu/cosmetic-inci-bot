@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "sources": [
+      "ICDRG/NACDG patch test core series",
+      "CIR (Cosmetic Ingredient Review) safety assessments",
+      "EU SCCS opinions on preservatives"
+    ],
+    "severity": "low | medium | high",
+    "key": "lowercased INCI name as in inci_dict.csv 'name' column"
+  },
+  "ingredients": {
+    "alcohol denat": {"severity": "medium", "category": "drying", "note": "Volatile alcohol — drying for compromised barrier"},
+    "denatured alcohol": {"severity": "medium", "category": "drying"},
+    "ethanol": {"severity": "low", "category": "drying"},
+    "isopropyl alcohol": {"severity": "medium", "category": "drying"},
+    "sd alcohol 40-b": {"severity": "medium", "category": "drying"},
+    "sd alcohol 40": {"severity": "medium", "category": "drying"},
+
+    "sodium lauryl sulfate": {"severity": "high", "category": "surfactant", "note": "Anionic surfactant - irritating in leave-on"},
+    "ammonium lauryl sulfate": {"severity": "high", "category": "surfactant"},
+    "sodium laureth sulfate": {"severity": "medium", "category": "surfactant"},
+    "ammonium laureth sulfate": {"severity": "medium", "category": "surfactant"},
+    "tea-lauryl sulfate": {"severity": "medium", "category": "surfactant"},
+
+    "parfum": {"severity": "high", "category": "fragrance"},
+    "fragrance": {"severity": "high", "category": "fragrance"},
+
+    "methylisothiazolinone": {"severity": "high", "category": "preservative", "note": "MI - high sensitisation rate"},
+    "methylchloroisothiazolinone": {"severity": "high", "category": "preservative", "note": "MCI - banned in leave-on EU"},
+    "iodopropynyl butylcarbamate": {"severity": "medium", "category": "preservative"},
+    "dmdm hydantoin": {"severity": "medium", "category": "preservative", "note": "Formaldehyde-releaser"},
+    "diazolidinyl urea": {"severity": "medium", "category": "preservative", "note": "Formaldehyde-releaser"},
+    "imidazolidinyl urea": {"severity": "medium", "category": "preservative", "note": "Formaldehyde-releaser"},
+    "quaternium-15": {"severity": "high", "category": "preservative", "note": "Formaldehyde-releaser"},
+    "2-bromo-2-nitropropane-1,3-diol": {"severity": "medium", "category": "preservative", "note": "Bronopol - formaldehyde-releaser"},
+    "formaldehyde": {"severity": "high", "category": "preservative", "note": "Banned in many leave-on; sensitiser"},
+
+    "menthol": {"severity": "medium", "category": "cooling"},
+    "camphor": {"severity": "medium", "category": "cooling"},
+    "eucalyptol": {"severity": "medium", "category": "essential_oil"},
+    "limonene": {"severity": "medium", "category": "fragrance"},
+    "linalool": {"severity": "medium", "category": "fragrance"},
+    "citral": {"severity": "medium", "category": "fragrance"},
+
+    "propylene glycol": {"severity": "low", "category": "humectant", "note": "Common contact allergen at high %"},
+    "lanolin": {"severity": "low", "category": "occlusive", "note": "Possible sensitiser"},
+    "cocamidopropyl betaine": {"severity": "low", "category": "surfactant"},
+
+    "sorbic acid": {"severity": "low", "category": "preservative"},
+    "potassium sorbate": {"severity": "low", "category": "preservative"},
+    "benzyl alcohol": {"severity": "low", "category": "preservative"},
+
+    "mentha piperita oil": {"severity": "medium", "category": "essential_oil"},
+    "melaleuca alternifolia leaf oil": {"severity": "medium", "category": "essential_oil"},
+    "eucalyptus globulus leaf oil": {"severity": "medium", "category": "essential_oil"},
+    "citrus aurantium dulcis peel oil": {"severity": "medium", "category": "essential_oil", "note": "Phototoxic"},
+    "citrus limon peel oil": {"severity": "medium", "category": "essential_oil", "note": "Phototoxic"},
+    "citrus bergamia peel oil": {"severity": "high", "category": "essential_oil", "note": "Phototoxic"},
+    "cinnamomum cassia leaf oil": {"severity": "high", "category": "essential_oil"}
+  }
+}

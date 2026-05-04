@@ -1,0 +1,59 @@
+[project]
+name = "inci-bot"
+version = "0.1.0"
+description = "Telegram bot for analyzing cosmetic INCI compositions"
+requires-python = ">=3.12"
+dependencies = [
+    # Telegram bot
+    "aiogram==3.13.1",
+    # DB
+    "sqlalchemy[asyncio]==2.0.36",
+    "asyncpg==0.30.0",
+    "alembic==1.13.3",
+    # Cache
+    "redis==5.2.0",
+    # HTTP
+    "httpx==0.27.2",
+    "beautifulsoup4==4.12.3",
+
+    # Sync DB driver for Alembic migrations (asyncpg is for runtime)
+    "psycopg2-binary==2.9.9",
+    # OCR + image
+    "pytesseract==0.3.13",
+    "pillow==11.0.0",
+    "opencv-python-headless==4.10.0.84",
+    "numpy==2.1.3",
+    # Fuzzy matching
+    "rapidfuzz==3.10.1",
+    # Config / utils
+    "pydantic==2.9.2",
+    "pydantic-settings==2.6.1",
+    "python-dotenv==1.0.1",
+    "structlog==24.4.0",
+    # CSV / data
+    "pandas==2.2.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.3.3",
+    "pytest-asyncio==0.24.0",
+    "ruff==0.7.4",
+    "mypy==1.13.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "ASYNC"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["."]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
